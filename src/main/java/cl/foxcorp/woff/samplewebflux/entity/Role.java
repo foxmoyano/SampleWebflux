@@ -8,21 +8,19 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(collection = "person")
-public class Person {
+@Document(collection = "role")
+public class Role {
     @Id
-    @Field("id")
+    @Field("_id")
     private String id;
-    private String name;
-    private String lastName;
+    private String code;
+    private String description;
+    private boolean valid;
     private LocalDateTime dateCreation;
-    private LocalDate dateBirthday;
-    private String gender;
 }
